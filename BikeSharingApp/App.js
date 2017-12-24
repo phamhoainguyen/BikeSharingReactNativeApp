@@ -14,7 +14,7 @@ import {
 
 import RegisterMain from './src/components/register/RegisterMain.js'
 import LoginMain from './src/components/login/LoginMain.js'
-export default class App extends Component<{}> {
+export default class App extends Component {
   render() {
     return (
       <RegisterMain />
