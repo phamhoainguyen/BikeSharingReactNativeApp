@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import {
-    StyleSheet,
+
     TouchableOpacity,
-    View,
+    View, Text, Image, ImageBackground, Dimensions
 
 } from 'react-native';
 import { Container, Header, Content, Item, Input, Button, Label, Center } from 'native-base'
-import { Col, Row, Grid } from 'react-native-easy-grid';
+import Icon from 'react-native-vector-icons/MaterialIcons'
 
+
+import styles from './loginStyles';
 
 export default class Login extends Component {
     constructor(props) {
@@ -17,67 +19,37 @@ export default class Login extends Component {
 
     render() {
         return (
-            /*
-            <Container  style={{ alignItems: 'center', justifyContent: 'center' ,flex:1}} >
 
 
+            <Container >
+                <Content contentContainerStyle={ styles.content }>
+                    <ImageBackground source={require('../../images/pictures/login.jpg')} style={ styles.background } >
+                        <View style={ styles.logoContent } />
 
-
-
-
-                <Content contentContainerStyle={{ width: 200, height: 200, backgroundColor: 'black' }} >
-                    
+                        <View style={ styles.loginContent }>
                             <Item >
-                                <Input placeholderTextColor='white' placeholder='Số điện thoại di động' />
+                                <Icon name='person' size={30} color='white' />
+                                <Input placeholderTextColor='white' placeholder='Số điện thoại di động ' style={ styles.text } />
                             </Item>
 
                             <Item>
-                                <Input placeholderTextColor='white' placeholder='Mật khẩu' />
+                                <Icon name='lock' size={30} color='white' />
+                                <Input placeholderTextColor='white' placeholder='Mật khẩu' style={ styles.text } />
                             </Item>
-                           
-                                    <Button bordered light >
-                                        <Text style={{ color: 'white' }} >Đăng nhập</Text>
-                                    </Button>
-                            
-                </Content>
 
-
-
-
-
-
-            </Container>
-            */
-
-            <Container >
-                <Content contentContainerStyle={{ flex: 1 }}>
-                    <View style={{ backgroundColor: 'white', flex: 3 }} />
-
-                    <View style={{ backgroundColor: 'black', flex: 2, alignItems: 'center' }}>
-                        <Item >
-                            <Input placeholderTextColor='white' placeholder='Số điện thoại di động' />
-                        </Item>
-
-                        <Item>
-                            <Input placeholderTextColor='white' placeholder='Mật khẩu' />
-                        </Item>
-
-                        <TouchableOpacity  >
-                            <View style={{
-                                backgroundColor: 'transparent', borderRadius: 10,
-                                borderWidth: 1, borderColor: 'white', padding: 20
-                            }}>
-                                <Text style={{ color: 'white' }} >Đăng nhập</Text>
+                            <TouchableOpacity  >
+                                <View style={ styles.button }>
+                                    <Text style={ styles.buttonText } >ĐĂNG NHẬP</Text>
+                                </View>
+                            </TouchableOpacity>
+                            <View style={{ flexDirection: 'row', marginTop: 50 }}>
+                                <Label style={ styles.text } >Bạn chưa có tài khoản?</Label>
+                                <Label style={ styles.text }  >Đăng ký</Label>
                             </View>
-                        </TouchableOpacity>
-                        <View style={{ flexDirection: 'row' }}>
-                            <Label style={{ color: 'white' }} >Bạn chưa có tài khoản?</Label>
-                            <Label style={{ color: 'white' }} >Đăng ký</Label>
+
+
                         </View>
-
-
-                    </View>
-
+                    </ImageBackground>
                 </Content>
             </Container>
 
@@ -87,35 +59,3 @@ export default class Login extends Component {
     }
 }
 
-const styles = StyleSheet.create({
-
-
-
-    //code cu
-    /*
-    container: {
-        flex: 1.3,
-        alignItems: 'center',
-        justifyContent: 'flex-start',
-
-    },
-    button: {
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: '#424242',
-        //height: MARGIN,
-        borderRadius: 20,
-        zIndex: 100,
-        // width: DEVICE_WIDTH - 40,
-        height: 40,
-        marginTop: 30,
-
-    },
-    text: {
-        color: 'white',
-        backgroundColor: 'transparent',
-    },
-    */
-
-
-})

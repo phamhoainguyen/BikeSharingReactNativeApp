@@ -2,48 +2,61 @@ import React, { Component } from 'react';
 import {
     StyleSheet,
     TouchableOpacity,
-    View, Text
+    View, Text, ImageBackground
 } from 'react-native';
-import { Container, Header, Content, Item, Input, Button, Label } from 'native-base'
+import { Container, Header, Content, Item, Input, Button, Label, Left,Right } from 'native-base'
+import Icon from 'react-native-vector-icons/MaterialIcons'
+
+import styles from './verificationStyle'
 
 
 export default class Verification extends Component {
     render() {
         return (
             <Container>
-                <Content contentContainerStyle={{ flex: 1, backgroundColor: 'black' }}>
-                    <View style={{ flex: 1 , justifyContent: 'center', alignItems: 'center'}}>
-                        <Label style={{ color: 'white' }} >Nhập mã code vừa được gửi vào số điện thoại bạn đăng ký</Label>
-                    </View>
-                    <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center', flex: 1 }}>
-                        <Item  style={{ flex: 1,marginLeft:10,marginRight:10 }}>
-                            <Input placeholderTextColor='white' />
-                        </Item>
-                        <Item  style={{ flex: 1,marginLeft:10,marginRight:10  }}>
-                            <Input placeholderTextColor='white' />
-                        </Item>
-                        <Item  style={{ flex: 1 ,marginLeft:10,marginRight:10 }}>
-                            <Input placeholderTextColor='white' />
-                        </Item>
-                        <Item  style={{ flex: 1 ,marginLeft:10,marginRight:10 }}>
-                            <Input placeholderTextColor='white' />
-                        </Item>
+                <ImageBackground source={require('../../images/pictures/login.jpg')} style={styles.background}>
+                    <Header style={styles.header}>
+                        <Left>
+                            <Button transparent>
+                                <Icon name='arrow-back' color='white' size={30} />
+                            </Button>
+                        </Left>
+                        <Right>
+                           
+                        </Right>
 
-                    </View>
-                    <View style={{ flex: 1 }}>
-                        <TouchableOpacity  >
-                            <View style={{
-                                backgroundColor: 'transparent', borderRadius: 10,
-                                borderWidth: 1, borderColor: 'white', padding: 20, flex: 1,marginLeft:10,marginRight:10,
-                                justifyContent: 'center', alignItems: 'center'
-                            }}>
-                                <Text style={{ color: 'white' }} >Xác thực</Text>
-                            </View>
 
-                        </TouchableOpacity>
-                    </View>
+                    </Header>
+                    <Content contentContainerStyle={styles.content}>
+                        <View style={styles.guideContent}>
+                            <Label style={styles.text} >Nhập mã code vừa được gửi vào số điện thoại bạn đăng ký</Label>
+                        </View>
+                        <View style={styles.verifyNumberContent}>
+                            <Item style={styles.input}>
+                                <Input placeholderTextColor='white' style = { styles.text } />
+                            </Item>
+                            <Item style={styles.input}>
+                                <Input placeholderTextColor='white'  style = { styles.text } />
+                            </Item>
+                            <Item style={styles.input}>
+                                <Input placeholderTextColor='white'  style = { styles.text }/>
+                            </Item>
+                            <Item style={styles.input}>
+                                <Input placeholderTextColor='white'  style = { styles.text }/>
+                            </Item>
 
-                </Content>
+                        </View>
+                        <View style={styles.verifyContent}>
+                            <TouchableOpacity  >
+                                <View style={styles.verifyButton}>
+                                    <Text style={styles.text} >Xác thực</Text>
+                                </View>
+
+                            </TouchableOpacity>
+                        </View>
+
+                    </Content>
+                </ImageBackground>
             </Container>
 
         );

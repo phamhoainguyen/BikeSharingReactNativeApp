@@ -5,7 +5,7 @@ import Dimensions from 'Dimensions';
 
 const DEVICE_WIDTH = Dimensions.get('window').width;
 const DEVICE_HEIGHT = Dimensions.get('window').height;
-
+/*
 const MARGIN = 40;
 
 export default loginStyles = StyleSheet.create({
@@ -89,3 +89,43 @@ export default loginStyles = StyleSheet.create({
         backgroundColor: 'transparent',
     },
 });
+
+*/
+export default loginStyles = StyleSheet.create({
+    content: {
+        flex: 1
+    },
+    logoContent: {
+        flex: 1
+    },
+    background: {
+        flex: 1
+    },
+    loginContent: {
+        flex: 1,
+        alignItems: 'center',
+        marginLeft: 15,
+        marginRight: 15
+    },
+    registerContent: {
+        flexDirection: 'row',
+        marginTop: 50
+    },
+    button: {
+        backgroundColor: 'transparent',
+        padding: 20,
+        marginTop: 25
+    },
+    buttonText: {
+        color: 'white',
+        fontWeight: 'bold',
+        fontSize: 18
+    },
+    text: {
+        color: 'white'
+    }
+
+
+
+
+})

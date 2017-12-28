@@ -7,7 +7,7 @@ import Dimensions from 'Dimensions';
 
 const DEVICE_WIDTH = Dimensions.get('window').width;
 const DEVICE_HEIGHT = Dimensions.get('window').height;
-
+/*
 const MARGIN = 40;
 
 export default registerStyles = StyleSheet.create({
@@ -81,4 +81,28 @@ export default registerStyles = StyleSheet.create({
         color: 'white',
         backgroundColor: 'transparent',
     },
+});
+*/
+export default registerStyles = StyleSheet.create({
+    header:{
+        backgroundColor:'transparent'
+      },
+    content:{
+      flex:1
+    },
+    background:{
+        flex:1
+      },
+    registerContent:{
+        marginLeft: 15,
+        marginRight: 15,
+        marginTop:50
+       
+    },
+    text:{
+        color:'white'
+    },
+
+
+
 });
