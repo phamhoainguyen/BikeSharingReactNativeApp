@@ -49,17 +49,18 @@ export default class Post extends Component {
                     <Right />
                 </Header>
                 <Content contentContainerStyle={styles.content}>
-                    <View>
-                        <Item>
-                            <Icon name='map-marker' size={30} color='green' />
-                            <Input placeholder="Điểm khởi hành" />
+                <ImageBackground source={require('../../images/pictures/post.jpg')} style={ styles.background } >
+                    <View style = { styles.contentInput }>
+                        <Item regular style = { styles.input }>
+                            <Icon name='map-marker' size={30} color='#8DDF83' />
+                            <Input  placeholder="Điểm khởi hành" />
                         </Item>
-                        <Item>
-                            <Icon name='map-marker' size={30} color='red' />
-                            <Input placeholder="Điểm đến" />
+                        <Item regular style = { styles.input }>
+                            <Icon name='map-marker' size={30} color='black' />
+                            <Input placeholder="Điểm đến"  />
                         </Item>
-                        <Item>
-                            <Icon name='car' size={30} />
+                        <Item regular style = { styles.input }>
+                            <Icon name='car' size={30} color='#8DDF83'  />
 
 
                             <Picker
@@ -78,20 +79,20 @@ export default class Post extends Component {
 
                             </Picker>
                         </Item>
-
-                        <Item>
-                            <Icon name='calendar' size={30} />
+                        <View style = { styles.contentTime} >
+                        <Item regular style = { [{flex:1} ] }>
+                            <Icon name='calendar' size={30}  color='#8DDF83' />
                             <Input placeholder="Ngày khởi hành" />
                         </Item>
-                        <Item>
-                            <Icon name='clock-o' size={30} />
+                        <Item   regular  style = { [{flex:1}]}>
+                            <Icon name='clock-o' size={30} color='#8DDF83'  />
                             <Input placeholder="Giờ đi" />
                         </Item>
+                        </View>
 
 
-
-                        <Item>
-                            <Icon name='money' size={30} />
+                        <Item regular style = { styles.input }>
+                            <Icon name='money' size={30} color='#8DDF83' />
                             <Input placeholder="Gía tiền cho 1 chổ ngồi" />
                         </Item>
                         <Button block style={styles.postButton}><Text style={styles.textButton}> Đăng </Text></Button>
@@ -100,7 +101,7 @@ export default class Post extends Component {
 
 
                     </View>
-
+                 </ImageBackground>
                 </Content>
             </Container>
 
