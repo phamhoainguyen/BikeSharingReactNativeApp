@@ -8,6 +8,7 @@ import PostScreen from './src/components/post/post'
 import MapScreen from './src/components/post/map'
 import SearchScreen from './src/components/search/search'
 import ResultScreen from './src/components/result/result'
+import ProfileScreen from './src/components/profile/profile'
 
 
 export  const Route = StackNavigator ({
@@ -16,7 +17,12 @@ export  const Route = StackNavigator ({
         screen: LoginScreen
     
     },
-    Defaul:
+    Profile:
+    {
+        screen: ProfileScreen
+    
+    },
+    Default:
     {
         screen: DefaultScreen
     },
