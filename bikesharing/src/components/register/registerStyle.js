@@ -94,15 +94,17 @@ export default registerStyles = StyleSheet.create({
         flex:1
       },
     registerContent:{
-        marginLeft: 15,
-        marginRight: 15,
-        marginTop:50
+        marginLeft: 30,
+        marginRight: 30,
+        marginTop:80,
        
     },
     text:{
-        color:'white'
+        color:'rgba(255, 255, 255, 1)'
     },
-
-
-
+    buttonText: {
+        color: 'white',
+        fontWeight: 'bold',
+        fontSize: 18
+    },
 });

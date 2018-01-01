@@ -104,8 +104,8 @@ export default loginStyles = StyleSheet.create({
     loginContent: {
         flex: 1,
         alignItems: 'center',
-        marginLeft: 15,
-        marginRight: 15
+        marginLeft: 30,
+        marginRight: 30
     },
     registerContent: {
         flexDirection: 'row',
@@ -113,8 +113,14 @@ export default loginStyles = StyleSheet.create({
     },
     button: {
         backgroundColor: 'transparent',
-        padding: 20,
-        marginTop: 25
+        paddingLeft: 30,
+        paddingTop: 7,
+        paddingRight: 30,
+        paddingBottom: 7,
+        marginTop: 40,
+        borderRadius: 20,
+        borderWidth: 2,
+        borderColor: 'white'
     },
     buttonText: {
         color: 'white',
@@ -122,7 +128,16 @@ export default loginStyles = StyleSheet.create({
         fontSize: 18
     },
     text: {
-        color: 'white'
+        color: 'white',
+    },
+    commonText: {
+        color: 'white',
+        fontSize: 12
+    }, 
+    registerText: {
+        color: 'white',
+        fontSize: 12,
+        textDecorationLine: 'underline',
     }
 
 
