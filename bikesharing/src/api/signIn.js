@@ -1,5 +1,5 @@
 const signIn = (phoneNumber, password) => (
-    fetch('https://bikesharingapi.herokuapp.com/api/auth',
+    fetch('https://trafficsharing.herokuapp.com/api/auth',
     {   
         method: 'POST',
         headers: {

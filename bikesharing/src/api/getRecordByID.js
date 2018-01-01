@@ -1,15 +1,14 @@
-const getRecordByID = (startLocation, vehical, endLocation, startTime, token) => (
-    fetch('https://bikesharingapi.herokuapp.com/api/records/',
+const getRecordByID = (id, token) => {
+let url = `https://trafficsharing.herokuapp.com/api/records/${id}`;
+
+    fetch(url,
     {   
         method: 'POST',
         headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
             'authorization': token
-        },
-        body: JSON.stringify({ startLocation, vehical, endLocation, startTime })
+        }
     })
     .then((response) => response.json())
-);
+};
 
 module.exports = getRecordByID;

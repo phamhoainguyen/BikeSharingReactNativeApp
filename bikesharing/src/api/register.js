@@ -1,5 +1,5 @@
 const register = (phoneNumber, name, password) => (
-    fetch('https://bikesharingapi.herokuapp.com/api/users',
+    fetch('https://trafficsharing.herokuapp.com/api/users',
     {   
         method: 'POST',
         headers: {
