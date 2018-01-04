@@ -40,8 +40,8 @@ export default class Search extends Component {
 
 
         let _startLocation = { lat: _lat, long: _long };
-        let _radius = 100000;
-        let _time = "2017-12-01 7:0";
+        let _radius = 10000000;
+        let _time = "2017-12-20 7:0";
         let _vehicle = this.state.vehicle;
         try {
             let token = await getToken();

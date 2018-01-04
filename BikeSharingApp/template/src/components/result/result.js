@@ -24,26 +24,32 @@ export default class Result extends Component {
 
     componentDidMount() {
         let _records = this.props.navigation.state.params.records;
-        console.log(_records);
         var _data = this.state.data.slice();
         var _arrayLength = _records.length;
+        //console.log(_arrayLength);
         for (var i = 0; i < _arrayLength; i++) {
             let _record = {
                 recordID: _records[i]._id,
                 name: _records[i].user_id.name,
+                phone: _records[i].user_id.phoneNumber,
                 sex: _records[i].user_id.gender,
                 start: _records[i].startAddress,
+                birthYear: _records[i].user_id.birthYear,
+                city: _records[i].user_id.city,
                 end: _records[i].endAddress,
                 startLocation: _records[i].startLocation,
                 endLocation: _records[i].endLocation,
                 time: _records[i].startTime,
-                avatar: _records[i].user_id.profileImg,
+                // avatar: _records[i].user_id.profileImg,
+                avatar: 'https://znews-photo-td.zadn.vn/w480/Uploaded/bpivpbbp/2017_11_22/chipu.jpg',
                 price: _records[i].price,
             }
-            _data.push(_record)
+            
+            this.state.data.push(_record);
+            
         }
         //console.log(_data);
-        this.setState({ data: _data });
+        //this.setState({ data: _data });
     }
 
     onSuccess() {
@@ -83,8 +89,6 @@ export default class Result extends Component {
     };
 
 
-    _keyExtractor = (item, index) => item.recordID;
-
     render() {
         return (
 
@@ -106,7 +110,6 @@ export default class Result extends Component {
 
                         <FlatList
                             data={this.state.data}
-                            keyExtractor={this._keyExtractor}
                             renderItem={({ item }) => {
                                 /*
                                 return <View style={styles.rowContent}>
@@ -133,11 +136,10 @@ export default class Result extends Component {
  
                                 </View>
                                 */
-                                return
-                                <TouchableOpacity onPress={() => {
-                                    console.log(item);
+                                return <TouchableOpacity onPress={() => {
+                                    console.log({record: item});
                                     return this.props.navigation.navigate('Detail', {record: item});
-                                } }>
+                                }}>
                                 <View style={styles.rowContent}>
                                     <View style={{ flex: 1, padding: 7, alignItems: 'center', backgroundColor: '#C0C0CA', }}>
                                         <Thumbnail large source={{ uri: item.avatar }} />
@@ -173,11 +175,11 @@ export default class Result extends Component {
                                         </View>
 
                                     </View>
-                                </View>
+                                </View> 
                                 </TouchableOpacity>
 
                             }}
-                            keyExtractor={(item, index) => item.name}
+                            
                             ItemSeparatorComponent={this.renderSeparator}
 
                         />

@@ -5,12 +5,14 @@ import {
     View, Text, Image, ImageBackground, Dimensions
 
 } from 'react-native';
+
 import { Container, Header, Content, Item, Input, Button, Label, Center, Left, Right, Body, Title, Thumbnail, Tab, Tabs, TabHeading } from 'native-base'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import MapView from 'react-native-maps';
 import styles from './detailStyle';
 import TripDetail from './tripDetail'
 import TripUserProfile from './tripUserProfile'
+import { error } from 'util';
 
 export default class Detail extends Component {
 
@@ -18,10 +20,16 @@ export default class Detail extends Component {
     constructor(props) {
         super(props);
 
+        this.state = {};
         this.state.record = this.props.navigation.state.params.record;
-        console.log("detail" + this.state.record);
+
+        //console.log(this.state.record);
     }
 
+    componentWillMount() {
+        
+        
+    };
 
 
     render() {
@@ -55,16 +63,28 @@ export default class Detail extends Component {
                         <View style={styles.contentDetailProfile}>
                             <Tabs initialPage={0}>
                                 <Tab heading={<TabHeading style={styles.tabHeader}><Icon size={30} name="map-marker" /><Text style={styles.tabText}>Chuyến đi</Text></TabHeading>}>
-                                    <TripUserProfile />
+                                    <TripUserProfile name={this.state.record.name}
+                                            phoneNumber={this.state.record.phone}
+                                            gender={this.state.record.sex}
+                                            city={this.state.record.city}
+                                            birthYear={this.state.record.birthYear}
+                                    />
                                 </Tab>
                                 <Tab heading={<TabHeading style={styles.tabHeader}><Icon size={30} name="user-circle-o" /><Text style={styles.tabText}>Cá Nhân</Text></TabHeading>}>
-                                    <TripUserProfile user={this.record}/>
+                                    {/* <TripUserProfile user={this.state.record}/> */}
+                                    <TripUserProfile name={this.state.record.name}
+                                            phoneNumber={this.state.record.phone}
+                                            gender={this.state.record.sex}
+                                            city={this.state.record.city}
+                                            birthYear={this.state.record.birthYear}
+                                    />
                                 </Tab>
 
                             </Tabs>
                         </View>
                         <View style={styles.contentCall}>
                             <TouchableOpacity onPress={() => {
+
                             }} >
                                 <View style={styles.callButton}>
                                     <Text style={styles.textCallButton} >Gọi</Text>

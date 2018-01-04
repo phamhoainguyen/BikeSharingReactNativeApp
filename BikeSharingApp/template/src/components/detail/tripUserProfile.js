@@ -17,7 +17,6 @@ export default class TripUserProfile extends Component {
 
     constructor(props) {
         super(props);
-        this.state.user = this.props.user;
     }
 
 
@@ -25,31 +24,30 @@ export default class TripUserProfile extends Component {
     render() {
 
         return (
-
-            <View > 
+            <View >
             <Item regular>
                 <Icon name='user-circle' size={30} />
-                <Input editable={false} selectTextOnFocus={false}  value = {this.state.user.name}/>
+                <Input editable={false} selectTextOnFocus={false}  value = {this.props.name}/>
             </Item>
 
             <Item regular>
                 <Icon name='phone-square' size={30} />
-                <Input editable={false} selectTextOnFocus={false} value = {this.state.user.phoneNumber}/>
+                <Input editable={false} selectTextOnFocus={false} value = {this.props.phoneNumber}/>
             </Item> 
             <Item regular>
                 <Icon name='transgender' size={30} />
-                <Input editable={false} selectTextOnFocus={false}  value = {this.state.user.gender}/>
+                {/* <Input editable={false} selectTextOnFocus={false}  value = {this.props.gender}/> */}
             </Item>
 
             <Item regular>
                 <Icon name='birthday-cake' size={30} />
-                <Input editable={false} selectTextOnFocus={false}  value = {this.state.user.birthYear}/>
+                <Input editable={false} selectTextOnFocus={false}  value = {this.props.birthYear}/>
                 
             </Item>
 
             <Item regular>
                 <Icon name='home' size={30} />
-                <Input editable={false} selectTextOnFocus={false}  value = {this.state.user.city}/>
+                <Input editable={false} selectTextOnFocus={false}  value = {this.props.city}/>
             </Item>
            
             
