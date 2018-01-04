@@ -1,5 +1,5 @@
-const signIn = (phoneNumber, password) => (
-    fetch('https://trafficsharing.herokuapp.com/api/auth',
+const signIn = async (phoneNumber, password) => {
+    let response = await fetch('https://trafficsharing.herokuapp.com/api/auth',
     {   
         method: 'POST',
         headers: {
@@ -7,11 +7,10 @@ const signIn = (phoneNumber, password) => (
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({ phoneNumber, password })
-    })
-    .then((response) => {
-        console.log(response);
-        return response.json();
-    })
-);
+    });
+
+    let jsonRes = await response.json();
+    return jsonRes;
+};
 
 module.exports = signIn;
